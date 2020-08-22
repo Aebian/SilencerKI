@@ -28,21 +28,21 @@ namespace SilencerKI.Utils
             {
                 GameFiber.Yield();
 
-                if (Game.IsKeyDownRightNow(Global.Controls.AttachSilencerModifier) && Game.IsKeyDown(Global.Controls.AttachSilencer) || Global.Controls.AttachSilencerModifier == Keys.None && Game.IsKeyDown(Global.Controls.AttachSilencer))
+                if ((Game.IsKeyDownRightNow(Global.Controls.AttachSilencerModifier) && Game.IsKeyDown(Global.Controls.AttachSilencer) || Global.Controls.AttachSilencerModifier == Keys.None && Game.IsKeyDown(Global.Controls.AttachSilencer)) && (Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject != null))
                 {
-                    UpdatePlayer();
-                    if (NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0x837445AA) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0xA73D4664) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0xC304849A) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0x65EA7EBB) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0xE608B35E) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0xAC42DF71))
-                    {
-                    Logger.DebugLog("Trying to remove silencer from current selected weapon:");
-                    Logger.DebugLog(Global.Dynamics.EquippedWeaponHash.ToString());
-                    RemoveSilencer();
-                    }
-                    else
-                    {
-                    Logger.DebugLog("Trying to attach silencer to current selected weapon:");
-                    Logger.DebugLog(Global.Dynamics.EquippedWeaponHash.ToString());
-                    AttachSilencer();
-                    }
+                        UpdatePlayer();
+                        if (NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0x837445AA) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0xA73D4664) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0xC304849A) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0x65EA7EBB) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0xE608B35E) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0xAC42DF71))
+                        {
+                            Logger.DebugLog("Trying to remove silencer from current selected weapon:");
+                            Logger.DebugLog(Global.Dynamics.EquippedWeaponHash.ToString());
+                            RemoveSilencer();
+                        }
+                        else
+                        {
+                            Logger.DebugLog("Trying to attach silencer to current selected weapon:");
+                            Logger.DebugLog(Global.Dynamics.EquippedWeaponHash.ToString());
+                            AttachSilencer();
+                        }
                 }
             }
 
