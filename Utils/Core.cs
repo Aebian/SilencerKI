@@ -50,7 +50,6 @@ namespace SilencerKI.Utils
 
         private static void UpdatePlayer()
         {
-            Global.Dynamics.CurrentPed = Game.LocalPlayer.Character;
             Global.Dynamics.EquippedWeaponHash = Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject.Model.Hash;
         }
 

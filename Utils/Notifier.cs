@@ -13,7 +13,7 @@ namespace SilencerKI.Utils
         //Simple log line
         internal static void Notify(string body)
         {
-            string notice = string.Format("~p~[{0}]~s~:", body);
+            string notice = string.Format("~p~{0}~s~", body);
             Game.DisplayNotification(notice);
             Logger.DebugLog("Notification Sent.");
         }
