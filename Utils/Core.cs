@@ -28,8 +28,8 @@ namespace SilencerKI.Utils
             {
                 GameFiber.Yield();
 
-                if ((Game.IsKeyDownRightNow(Global.Controls.AttachSilencerModifier) && Game.IsKeyDown(Global.Controls.AttachSilencer) || Global.Controls.AttachSilencerModifier == Keys.None && Game.IsKeyDown(Global.Controls.AttachSilencer)) && (Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject != null))
-                {
+                if ((Game.IsKeyDownRightNow(Global.Controls.AttachSilencerModifier) && Game.IsKeyDown(Global.Controls.AttachSilencer) || Global.Controls.AttachSilencerModifier == Keys.None && Game.IsKeyDown(Global.Controls.AttachSilencer) || Game.IsControllerButtonDownRightNow(Global.Controls.AttachSilencerControllerModifier) && Game.IsControllerButtonDown(Global.Controls.AttachSilencerController) || Global.Controls.AttachSilencerControllerModifier == ControllerButtons.None && Game.IsControllerButtonDown(Global.Controls.AttachSilencerController)) && (Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject != null))
+                 {
                         UpdatePlayer();
                         if (NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0x837445AA) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0xA73D4664) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0xC304849A) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0x65EA7EBB) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0xE608B35E) || NativeFunction.Natives.HAS_WEAPON_GOT_WEAPON_COMPONENT<bool>(Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject, 0xAC42DF71))
                         {
@@ -50,7 +50,12 @@ namespace SilencerKI.Utils
 
         private static void UpdatePlayer()
         {
-            Global.Dynamics.EquippedWeaponHash = Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject.Model.Hash;
+            if (Global.Dynamics.CurrentPed)
+            {
+                
+                Global.Dynamics.EquippedWeaponHash = Global.Dynamics.CurrentPed.Inventory.EquippedWeaponObject.Model.Hash;
+
+            }
         }
 
         private static void AttachSilencer()

@@ -24,6 +24,8 @@ namespace SilencerKI.Utils
         {
             public static Keys AttachSilencer { get; set; }
             public static Keys AttachSilencerModifier { get; set; }
+            public static ControllerButtons AttachSilencerController { get; set; }
+            public static ControllerButtons AttachSilencerControllerModifier { get; set; }
         }
 
         internal static class Dynamics
