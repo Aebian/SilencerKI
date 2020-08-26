@@ -31,7 +31,6 @@ namespace SilencerKI.Utils
         internal static class Dynamics
         {
             public static uint EquippedWeaponHash { get; set; }
-            public static Ped CurrentPed { get; set; }
         }
     }
 }
