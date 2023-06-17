@@ -2,7 +2,7 @@
  *	Developed By: Aebian
  *	Name: SilencerKI
  *	Dependent: Rage Plugin Hook
- *	Released On: GitHub
+ *	Released On: GitHub, LCPDFR & GTA5-Mods.com
  */
 
 [assembly: Rage.Attributes.Plugin("SilencerKI", Author = "Aebian", Description = "Attach Silencers to any weapon with ease", SupportUrl = "https://Aebian.org")]

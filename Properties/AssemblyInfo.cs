@@ -9,9 +9,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("SilencerKI")]
 [assembly: AssemblyDescription("Attach Silencers to any weapon with ease")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Knight Industries")]
+[assembly: AssemblyCompany("nethavn A/S")]
 [assembly: AssemblyProduct("SilencerKI")]
-[assembly: AssemblyCopyright("© 2008 - 2020 by Knight Industries")]
+[assembly: AssemblyCopyright("© 2008 - 2023 by nethavn A/S")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.6.0.0")]
-[assembly: AssemblyFileVersion("0.6.0.0")]
+[assembly: AssemblyVersion("0.7.0.0")]
+[assembly: AssemblyFileVersion("0.7.0.0")]
 [assembly: NeutralResourcesLanguage("en-US")]
 
